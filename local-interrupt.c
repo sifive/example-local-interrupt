@@ -67,8 +67,7 @@ void display_instruction (void) {
 
 void metal_riscv_cpu_intc_mtip_handler(void) {
     // Disable Timer interrupt
-    struct metal_cpu cpu = metal_cpu_get(metal_cpu_get_current_hartid());
-    metal_cpu_disable_timer_interrupt(cpu);
+    metal_cpu_disable_timer_interrupt();
     printf("Awaken\n");
 
     // Enable local IRQs
@@ -93,7 +92,7 @@ void debounce (void) {
     metal_cpu_set_mtimecmp(cpu, metal_cpu_get_mtime(cpu) + RTC_FREQ);
 
     // Enable Timer interrupt
-    metal_cpu_enable_timer_interrupt(cpu);
+    metal_cpu_enable_timer_interrupt();
 }
 
 void metal_button_btn0_interrupt_handler (void) {
@@ -125,8 +124,6 @@ void metal_switch_sw3_interrupt_handler(int id, void *data) {
 
 int main (void)
 {
-    int rc;
-
     // Lets get start with getting LEDs and turn only RED ON
     metal_led_enable(led0_red);
     metal_led_enable(led0_green);
@@ -156,6 +153,8 @@ int main (void)
         printf("SW3 interrupt enable failed\n");
         return 5;
     }
+
+    metal_cpu_enable_interrupts();
 
     display_instruction();
 
