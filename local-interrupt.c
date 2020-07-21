@@ -62,7 +62,7 @@ void display_instruction (void) {
     printf("E31/E51 Coreplex IP Eval Kit 'local-interrupt' Example.\n\n");
     printf("Buttons 0-3 and Switch 3 are enabled as local interrupt sources.\n");
     printf("A 1s debounce timer is used between these interupts.\n");
-    printf("Pressing Buttons 0-2 toggle LEDs, while turn ON Switch 3 to exit.\n");
+    printf("Pressing Buttons 0-3 toggle LEDs, while turn ON Switch 3 to exit.\n");
     printf("\n");
 }
 
