@@ -1,11 +1,12 @@
 /* Copyright 2019 SiFive, Inc */
 /* SPDX-License-Identifier: Apache-2.0 */
 
-#include <stdio.h>
-#include <metal/cpu.h>
-#include <metal/led.h>
 #include <metal/button.h>
+#include <metal/cpu.h>
+#include <metal/interrupt.h>
+#include <metal/led.h>
 #include <metal/switch.h>
+#include <stdio.h>
 
 #define RTC_FREQ	32768
 
@@ -71,9 +72,13 @@ void metal_riscv_cpu_intc_mtip_handler(void) {
     printf("Awaken\n");
 
     // Enable local IRQs
+    metal_button_clear_interrupt(but0);
     metal_button_enable_interrupt(but0);
+    metal_button_clear_interrupt(but1);
     metal_button_enable_interrupt(but1);
+    metal_button_clear_interrupt(but2);
     metal_button_enable_interrupt(but2);
+    metal_button_clear_interrupt(but3);
     metal_button_enable_interrupt(but3);
     metal_switch_enable_interrupt(swch3);
 }
