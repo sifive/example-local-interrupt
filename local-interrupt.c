@@ -10,21 +10,21 @@
 
 #define RTC_FREQ	32768
 
-#ifndef metal_led_ld0_red
-#define metal_led_ld0_red metal_led_none
+#ifndef metal_led_ld0red
+#define metal_led_ld0red metal_led_none
 #endif
 
-#ifndef metal_led_ld0_green
-#define metal_led_ld0_green metal_led_none
+#ifndef metal_led_ld0green
+#define metal_led_ld0green metal_led_none
 #endif
 
-#ifndef metal_led_ld0_blue
-#define metal_led_ld0_blue metal_led_none
+#ifndef metal_led_ld0blue
+#define metal_led_ld0blue metal_led_none
 #endif
 
-#define led0_red metal_led_ld0_red
-#define led0_green metal_led_ld0_green
-#define led0_blue metal_led_ld0_blue
+#define led0_red metal_led_ld0red
+#define led0_green metal_led_ld0green
+#define led0_blue metal_led_ld0blue
 
 #ifndef metal_button_btn0
 #define metal_button_btn0 metal_button_none
