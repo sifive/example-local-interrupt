@@ -120,7 +120,7 @@ void metal_button_btn3_interrupt_handler (void) {
     debounce();
 }
 
-void metal_switch_sw3_interrupt_handler(int id, void *data) {
+void metal_switch_sw3_interrupt_handler (void) {
     metal_switch_disable_interrupt(swch3);
     printf("Switch 3 is on!\n");
     sw_status = 0;
